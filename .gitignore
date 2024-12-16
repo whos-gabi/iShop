@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+__init__.py
+*.egg-info
+*.egg
+*.egg-info/
+shop/mesaje/*.json

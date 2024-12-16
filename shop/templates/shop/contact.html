@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - iShop{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Contact Us</h1>
+    <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+            {{ form.nume.errors }}
+            <label for="id_nume" class="form-label">{{ form.nume.label }}:</label>
+            {{ form.nume }}
+        </div>
+        <div class="mb-3">
+            {{ form.prenume.errors }}
+            <label for="id_prenume" class="form-label">{{ form.prenume.label }}:</label>
+            {{ form.prenume}}
+        </div>
+        <div class="mb-3">
+            {{ form.data_nasterii.errors }}
+            <label for="id_data_nasterii" class="form-label">{{ form.data_nasterii.label }}:</label>
+            {{ form.data_nasterii }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.errors }}
+            <label for="id_email" class="form-label">{{ form.email.label }}:</label>
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.confirm_email.errors }}
+            <label for="id_confirm_email" class="form-label">{{ form.confirm_email.label }}:</label>
+            {{ form.confirm_email }}
+        </div>
+        <div class="mb-3">
+            {{ form.tip_mesaj.errors }}
+            <label for="id_tip_mesaj" class="form-label">{{ form.tip_mesaj.label }}:</label>
+            {{ form.tip_mesaj }}
+        </div>
+        <div class="mb-3">
+            {{ form.subiect.errors }}
+            <label for="id_subiect" class="form-label">{{ form.subiect.label }}:</label>
+            {{ form.subiect }}
+        </div>
+        <div class="mb-3">
+            {{ form.minim_zile_asteptare.errors }}
+            <label for="id_minim_zile_asteptare" class="form-label">{{ form.minim_zile_asteptare.label }}:</label>
+            {{ form.minim_zile_asteptare }}
+        </div>
+        <div class="mb-3">
+            {{ form.mesaj.errors }}
+            <label for="id_mesaj" class="form-label">{{ form.mesaj.label }}:</label>
+            {{ form.mesaj }}
+        </div>
+        <button type="submit" class="btn btn-primary">Trimite</button>
+    </form>
+</div>
+{% endblock %}
